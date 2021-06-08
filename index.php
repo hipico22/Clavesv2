@@ -22,7 +22,7 @@
        include 'nav.php';
        ?>
 <!-- Page content-->
-<div class="container-fluid">
+<div class="container-fluid" id="resultado">
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";

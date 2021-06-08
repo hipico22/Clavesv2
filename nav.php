@@ -7,7 +7,7 @@
         <a class="Mostrar" href="index.php"><li class="nav-obj">Mostrar Claves</li></a>
         <a class="Anadir" href="añadir_claves.php"><li class="nav-obj">Añadir Claves</li></a>
         <a class="Cambiar" href="cambiar_claves.php"><li class="nav-obj">Cambiar Claves</li></a>
-        <a class="Borrar" href="borrar_claves.php"><li class="nav-obj">Borrar Claves</li></a>
+        <a class="Borrar"><li class="nav-obj" id=borrar>Borrar Claves</li></a>
         <!--
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
