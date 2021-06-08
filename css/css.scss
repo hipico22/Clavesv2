@@ -1,0 +1,71 @@
+/*CSS de la barra de búsqueda*/
+.barra_busqueda {
+  width: 500px;
+  border-radius: 5px;
+}
+.logo {
+  width: 30%;
+  height: auto;
+  margin-right:15px;
+}
+@media (max-width: 800px){
+  .logo{
+    margin-bottom: 15px;
+  }
+}
+.pag-atual{
+  color: white;
+  background-color: rgba(55,55,55);
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 2%;
+  padding-right: 0;
+}
+.pag-atual:hover{
+  background-color: rgba(130,130,130);
+  color: black;
+}
+.nav-obj{
+  padding: 0;
+}
+
+/*Zona de MENU*/
+.Mostrar {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.Anadir {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.Cambiar {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+.Borrar {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+/*Form*/
+form{
+  padding: 0;
+}
+.form-group{
+  padding: 10px;
+  /*margin-left: 40%*/
+}
+.form-container{
+  background-color: rgba(200,180,170);
+  border-radius: 25px;
+  text-align: center;
+  padding: 0;
+}
+/*Table with data*/
