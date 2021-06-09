@@ -4,7 +4,8 @@
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
-  $consulta= "SELECT * FROM claves";
+  $id = $_GET['id'];
+  $consulta= "SELECT * FROM claves Where num_inc = '$id'";
   if ($resultado = $conexion->query($consulta)) {
     ?>
     <table style="border: solid black 2px" class="table table-hover">

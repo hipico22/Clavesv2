@@ -32,6 +32,16 @@ $(document).ready(function () {
             }
         })
     });
+    $("#borrar").click(function () {
+        $.ajax({
+            url: 'borrar_claves.php',
+            success: function (data) {
+                $('#resultado').html(data);
+                $('a').removeClass('pag-atual');
+                $('.Borrar').addClass('pag-atual')
+            }
+        })
+    });
     $('#busqueda').keyup(function (e) {
         let buscar = $('#busqueda').val();
         console.log(buscar);
