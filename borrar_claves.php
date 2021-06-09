@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" onload="active1()">
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
@@ -15,7 +15,7 @@
           <th scope="col">Descripción</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Estado</th>
-          <th scope="col">Opção</th>
+          <th scope="col">Opciones</th>
         </tr>
       </thead>
 

@@ -7,34 +7,28 @@ $(document).ready(function () {
             url: 'borrar_claves.php',
             success: function (data) {
                 $('#resultado').html(data);
-                $('#').fadeout(data);
+                $('a').removeClass('pag-atual');
+                $('.Borrar').addClass('pag-atual')
             }
         })
     });
     $("#cambiar").click(function () {
         $.ajax({
-            url: 'borrar_claves.php',
+            url: 'cambiar_claves.php',
             success: function (data) {
-                $('#resultado').html(data);
-                $('#').fadeout(data);
-            }
-        })
-    });
-    $("#mostrar").click(function () {
-        $.ajax({
-            url: 'borrar_claves.php',
-            success: function (data) {
-                $('#resultado').html(data);
-                $('#').fadeout(data);
+              $('#resultado').html(data);
+              $('a').removeClass('pag-atual');
+              $('.Cambiar').addClass('pag-atual')
             }
         })
     });
     $("#añadir").click(function () {
         $.ajax({
-            url: 'borrar_claves.php',
+            url: 'añadir_claves.php',
             success: function (data) {
-                $('#resultado').html(data);
-                $('#').fadeout(data);
+              $('#resultado').html(data);
+              $('a').removeClass('pag-atual');
+              $('.Anadir').addClass('pag-atual')
             }
         })
     });
