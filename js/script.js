@@ -24,7 +24,6 @@ $(document).ready(function () {
             }
         })
     });
-
     $("#cambiar1").click(function () {
         $.ajax({
             url: 'cambiar_claves.php',
@@ -35,6 +34,18 @@ $(document).ready(function () {
             }
         })
     });
+    $('#busqueda').keyup(function (e) {
+       let buscar = $('#busqueda').val();
+       console.log(buscar);
+       $.ajax({
+           url: 'busqueda.php',
+           type: 'POST',
+           data: { buscar: buscar },
+           success: function (data) {
+               $('#resultado').html(data);
+           }
+       })
+   });
     $("#añadir").click(function () {
         $.ajax({
             url: 'añadir_claves.php',

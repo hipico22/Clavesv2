@@ -5,6 +5,7 @@
   $consulta= "SELECT * FROM claves";
   if ($resultado = $conexion->query($consulta)) {
     ?>
+    <form method="POST" action="añadir_claves2.php">
     <table style="border: solid black 2px" class="table table-hover">
       <thead>
         <tr>
@@ -55,10 +56,8 @@
 
       };
       echo
-      '<form method="POST" action="añadir_claves2.php">
-      <tr>
+      '<tr>
       <td><input type="number" disabled="disabled"></td>
-      <td<input type="text"></td>
       <td><input type="text" placeholder="Nombre" name="nombre"></td>
       <td><select name="tipo"><option>Office 365</option><option>Microsoft Office 2019</option><option>Windows 10</option></select></td>
       <td><input type="text" placeholder="Clave" name="clave"></td>

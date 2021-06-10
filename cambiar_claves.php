@@ -1,6 +1,6 @@
 
 <!-- Page content-->
-<div class="container-fluid">
+<div class="container-fluid" id="resultado">
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
@@ -39,7 +39,7 @@
           <td>'.$linea['descripcion'].'</td>
           <td>'.$linea['cantidad'].'</td>
           <td>'.$linea['estado'].'</td>
-          <td><div class="btn_cambiar" id="cambiar1">Cambiar</div></td>
+          <td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
           </tr>
           ';
           $valor = 2;
@@ -53,7 +53,7 @@
           <td>'.$linea["descripcion"].'</td>
           <td>'.$linea["cantidad"].'</td>
           <td>'.$linea["estado"].'</td>
-          <td><div class="btn_cambiar" id="cambiar1">Cambiar</div></td>
+          <td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
           </tr>';
           $valor = 1;
         }

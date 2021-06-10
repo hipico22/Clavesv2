@@ -38,7 +38,7 @@
           <td>'.$linea['descripcion'].'</td>
           <td>'.$linea['cantidad'].'</td>
           <td>'.$linea['estado'].'</td>
-          <td><a class="btn_borrar" data-value="'.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
+          <td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>
           ';
           $valor = 2;
@@ -52,7 +52,7 @@
           <td>'.$linea["descripcion"].'</td>
           <td>'.$linea["cantidad"].'</td>
           <td>'.$linea["estado"].'</td>
-          <td><a class="btn_borrar" data-value="'.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
+          <td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>';
           $valor = 1;
         }

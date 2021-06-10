@@ -1,6 +1,7 @@
 <?php
 include 'conexion.php';
 
+$id = $_GET['id'];
 
 $nombre = $_POST['nombre'];
 $tipo = $_POST['tipo'];
@@ -9,13 +10,13 @@ $descripcion = $_POST['descripcion'];
 $cantidad = $_POST['cantidad'];
 $estado = $_POST['estado'];
 
-$insert = "INSERT INTO claves (nombre, tipo, clave, descripcion, cantidad, estado) VALUES ('$nombre', '$tipo', '$clave', '$descripcion', '$cantidad', '$estado')";
+$cambiar = "UPDATE claves SET nombre = '$nombre', tipo = '$tipo', clave = '$clave', descripcion = '$descripcion', cantidad = '$cantidad', estado = '$estado' Where num_inc = '$id'";
 
-
-$resultado = $conexion->query($insert);
+$resultado = $conexion->query($cambiar);
 
 if ($resultado) {
   header("Location: index.php");
   include("creado.php");
 }
+
  ?>
