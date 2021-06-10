@@ -72,4 +72,49 @@ form{
   text-align: center;
   padding: 0;
 }
+.btn_cambiar{
+  padding: 10%;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  padding-right: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+.btn_cambiar:hover{
+  background-color: purple;
+}
+.btn_borrar{
+  padding: 10%;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  padding-right: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration:  none;
+}
+.btn_borrar:hover{
+  background-color: orange;
+}
+#btn_send{
+  padding: 1%;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration:  none;
+  width: 100%
+}
+#btn_send:hover{
+    background-color: purple;
+}
+.descripcion{
+  width: 200px;
+}
+
+.encima {
+  z-index: 1;
+}
 /*Table with data*/

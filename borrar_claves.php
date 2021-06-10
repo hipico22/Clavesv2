@@ -28,7 +28,8 @@
 
         if($valor == 1)
         {
-          echo '<tbody>
+          echo '<form method="post">
+          <tbody>
           <tr class="table-active">
           <th scope="row">'.$linea['num_inc'].'</th>
           <td>'.$linea['nombre'].'</td>
@@ -37,7 +38,7 @@
           <td>'.$linea['descripcion'].'</td>
           <td>'.$linea['cantidad'].'</td>
           <td>'.$linea['estado'].'</td>
-          <td><a href="borrar_claves2.php?id='.$linea['num_inc'].'">Borrar</a></td>
+          <td><a class="btn_borrar" data-value="'.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>
           ';
           $valor = 2;
@@ -51,13 +52,14 @@
           <td>'.$linea["descripcion"].'</td>
           <td>'.$linea["cantidad"].'</td>
           <td>'.$linea["estado"].'</td>
-          <td><a href="borrar_claves2.php?id='.$linea['num_inc'].'">Borrar</a></td>
+          <td><a class="btn_borrar" data-value="'.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>';
           $valor = 1;
         }
 
       };
       echo'</tbody>
-      </table>';
+      </table>
+      </form>';
     };
     ?>

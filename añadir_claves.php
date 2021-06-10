@@ -54,7 +54,21 @@
         }
 
       };
-      echo'</tbody>
-      </table>';
+      echo
+      '<form method="POST" action="añadir_claves2.php">
+      <tr>
+      <td><input type="number" disabled="disabled"></td>
+      <td<input type="text"></td>
+      <td><input type="text" placeholder="Nombre" name="nombre"></td>
+      <td><select name="tipo"><option>Office 365</option><option>Microsoft Office 2019</option><option>Windows 10</option></select></td>
+      <td><input type="text" placeholder="Clave" name="clave"></td>
+      <td><textarea class="descripcion" placeholder="Descripción" name="descripcion"></textarea></td>
+      <td><input type="number" name="cantidad"></td>
+      <td><select name="estado"><option>No usada</option><option>Usada</option></select></td>
+      </tr>
+      </tbody>
+      </table>
+      <button type="submit" id="btn_send">Añadir</button>
+      </form>';
     };
     ?>

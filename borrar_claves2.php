@@ -2,7 +2,7 @@
 
 include 'conexion.php';
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $borrar= "DELETE FROM `claves` WHERE num_inc = ".$id."";
 

@@ -17,7 +17,7 @@
           <th scope="col">Descripción</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Estado</th>
-          <th scope="col">Opção</th>
+          <th scope="col">Opción</th>
         </tr>
       </thead>
 
@@ -39,7 +39,7 @@
           <td>'.$linea['descripcion'].'</td>
           <td>'.$linea['cantidad'].'</td>
           <td>'.$linea['estado'].'</td>
-          <td><a href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
+          <td><div class="btn_cambiar" id="cambiar1">Cambiar</div></td>
           </tr>
           ';
           $valor = 2;
@@ -53,7 +53,7 @@
           <td>'.$linea["descripcion"].'</td>
           <td>'.$linea["cantidad"].'</td>
           <td>'.$linea["estado"].'</td>
-          <td><a href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
+          <td><div class="btn_cambiar" id="cambiar1">Cambiar</div></td>
           </tr>';
           $valor = 1;
         }
