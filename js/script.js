@@ -49,6 +49,7 @@ $(document).ready(function () {
     $("#añadir").click(function () {
         $.ajax({
             url: 'añadir_claves.php',
+            type: 'POST',
             success: function (data) {
               $('#resultado').html(data);
               $('a').removeClass('pag-atual');

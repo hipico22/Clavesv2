@@ -1,4 +1,10 @@
+<?php
+session_start();
+$_SESSION['anadir'] = 0;
+$_SESSION['cambiar'] = 1;
+$_SESSION['borrar'] = 0;
 
+ ?>
 <!-- Page content-->
 <div class="container-fluid" id="resultado">
   <h1 class="mt-4">Claves</h1>

@@ -47,6 +47,17 @@
 
       <?php
 
+      $consulta1 = "SELECT tipo FROM tipo";
+
+      $resultado1 = $conexion->query($consulta1);
+
+      while ($linea1 = $resultado1->fetch_assoc()) {
+        $tipos[] = $linea1['tipo'];
+      }
+      print_r($tipos);
+
+      $contador = mysqli_num_rows($resultado1);
+
       $valor = 1;
 
       echo '<form method="POST" action="cambiar_claves3.php?id='.$id.'">';
@@ -59,8 +70,26 @@
           echo '<tbody>
           <tr class="table-active">
           <th scope="row">'.$linea['num_inc'].'</th>
-          <td><input type="text" name="nombre" value="'.$linea['nombre'].'"></td>
-          <td><select name="tipo" value="'.$linea['tipo'].'"><option>Office 365</option><option>Microsoft Office 2019</option><option>Windows 10</option></select></td>
+          <td><input type="text" name="nombre" value="'.$linea['nombre'].'"></td>';
+          echo '<td><select name="tipo">';
+            $saltar = $linea['tipo']-1;
+            $saltar2 = $saltar;
+            print($saltar);
+            for ($i=0;$i<$contador;$i++) {
+              if (!empty($saltar) OR $saltar == 0) {
+                echo $saltar;
+                echo '<option value='.$numero.'>'.$tipos[$saltar].'</option>';
+                $saltar = "";
+              } elseif ($i == $saltar2 && empty($saltar)) {
+                $numero = $i+1;
+                $i = $i+1;
+              }
+                $numero = $i+1;
+
+                echo '<option value='.$numero.'>'.$tipos[$i].'</option>';
+            }
+            echo '</select></td>';
+            echo'
           <td><input type="text" name="clave" value="'.$linea['clave'].'"></td>
           <td><input type="text" name="descripcion" value="'.$linea['descripcion'].'"></td>
           <td><input type="text" name="cantidad" value="'.$linea['cantidad'].'"></td>

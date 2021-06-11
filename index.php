@@ -14,7 +14,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body>
-  
+
   <div class="d-flex" id="wrapper">
     <!-- Page content wrapper-->
     <div id="page-content-wrapper">
@@ -27,7 +27,8 @@
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
-  $consulta= "SELECT * FROM claves";
+  $consulta = "SELECT c.num_inc, c.nombre, t.tipo, c.clave, c.descripcion, c.cantidad, c.estado FROM claves c INNER JOIN tipo t ON c.tipo = t.id_tipo"; 
+
   if ($resultado = $conexion->query($consulta)) {
     ?>
     <table style="border: solid black 2px" class="table table-hover">
@@ -50,6 +51,8 @@
       while ($linea = $resultado->fetch_assoc()) {
         //echo("$linea[num_inc], $linea[nombre]");
 
+
+
         if($valor == 1)
         {
           echo '<tbody>
@@ -69,6 +72,7 @@
           echo '<tr>
           <th scope="row">'.$linea["num_inc"].'</th>
           <td>'.$linea["nombre"].'</td>
+
           <td>'.$linea["tipo"].'</td>
           <td>'.$linea["clave"].'</td>
           <td>'.$linea["descripcion"].'</td>

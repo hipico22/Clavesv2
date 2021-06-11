@@ -1,3 +1,9 @@
+<?php
+session_start();
+$_SESSION['anadir'] = 0;
+$_SESSION['cambiar'] = 0;
+$_SESSION['borrar'] = 1;
+ ?>
 <div class="container-fluid" onload="active1()">
   <h1 class="mt-4">Claves</h1>
   <?PHP

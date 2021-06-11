@@ -1,4 +1,13 @@
+<?php
+session_start();
+$_SESSION['anadir'] = 1;
+$_SESSION['cambiar'] = 0;
+$_SESSION['borrar'] = 0;
+
+ ?>
+
 <div class="container-fluid" id="añadir">
+
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
