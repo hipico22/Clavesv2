@@ -8,7 +8,9 @@ $_SESSION['borrar'] = 1;
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
-  $consulta= "SELECT * FROM claves";
+  $articulos = 10;
+  $iniciar = ($_GET['pagina'] - 1) * $articulos;
+  $consulta= "SELECT c.num_inc, c.nombre, t.tipo, c.clave, c.descripcion, c.cantidad, c.estado FROM claves c INNER JOIN tipo t ON c.tipo = t.id_tipo LIMIT $iniciar, $articulos";
   if ($resultado = $conexion->query($consulta)) {
     ?>
     <table style="border: solid black 2px" class="table table-hover">
