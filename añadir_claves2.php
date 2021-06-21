@@ -15,7 +15,6 @@ $insert = "INSERT INTO claves (nombre, tipo, clave, descripcion, cantidad, estad
 $resultado = $conexion->query($insert);
 
 if ($resultado) {
-  header("Location: index.php");
-  include("creado.php");
+  header("Location: index.php?cd=21&tp=0");
 }
  ?>

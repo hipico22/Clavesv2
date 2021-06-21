@@ -54,7 +54,7 @@
       while ($linea1 = $resultado1->fetch_assoc()) {
         $tipos[] = $linea1['tipo'];
       }
-      print_r($tipos);
+      //print_r($tipos);
 
       $contador = mysqli_num_rows($resultado1);
 
@@ -78,7 +78,7 @@
             for ($i=0;$i<$contador;$i++) {
               if (!empty($saltar) OR $saltar == 0) {
                 echo $saltar;
-                echo '<option value='.$numero.'>'.$tipos[$saltar].'</option>';
+                echo '<option value="'.$numero.'">'.$tipos[$saltar].'</option>';
                 $saltar = "";
               } elseif ($i == $saltar2 && empty($saltar)) {
                 $numero = $i+1;
@@ -86,7 +86,7 @@
               }
                 $numero = $i+1;
 
-                echo '<option value='.$numero.'>'.$tipos[$i].'</option>';
+                echo '<option value="'.$numero.'">'.$tipos[$i].'</option>';
             }
             echo '</select></td>';
             echo'

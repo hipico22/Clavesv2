@@ -1,4 +1,3 @@
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +17,7 @@
       <?PHP
       include 'nav.php';
       ?>
-      <!-- Page content-->
+      <!-- Page content
       <div class="container-fluid" id="resultado">
         <h1 class="mt-4">Claves</h1>
-        <?PHP
+-->

@@ -29,7 +29,7 @@ $(document).ready(function () {
     $("#cambiar1").click(function () {
         $.ajax({
             url: 'cambiar_claves.php?pagina=1',
-            success: function (data) {q
+            success: function (data) {
               $('#resultado').html(data);
               $('a').removeClass('pag-atual');
               $('.Cambiar').addClass('pag-atual')
@@ -37,12 +37,12 @@ $(document).ready(function () {
             }
         })
     });
-    $('#busqueda').keyup(function (e) {
+    $('#busqueda').keyup(function () {
        let buscar = $('#busqueda').val();
        console.log(buscar);
        $.ajax({
            url: 'busqueda.php?pagina=1',
-           type: 'POST',
+           type: 'GET',
            data: { buscar: buscar },
            success: function (data) {
                $('#resultado').html(data);
@@ -62,15 +62,11 @@ $(document).ready(function () {
             }
         })
     });
-    /*
-    for (var int = 0; int < 10; int++) {
-    (function (int) {
+    $(".btnanadir").click(function () {
         $.ajax({
-            url : 'process.php',
-            success : function() {
-                alert("TEST");
-            }
-        });
-    })(int);
-}*/
+            url: 'añadir_claves.php?pagina=2',
+            type: 'POST',
+
+        })
+    });
 });
