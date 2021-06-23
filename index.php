@@ -183,12 +183,27 @@ $_SESSION['tp'] = 0;
           <?php
         }elseif($_GET['tipo']=='anadir') {
           $tipo = "anadir";
+          ?>
+          <script>
+          alterar_menu_anadir();
+          </script>
+          <?php
           include 'añadir_claves.php';
         }elseif ($_GET['tipo']=='cambiar') {
           $tipo = "cambiar";
+          ?>
+          <script>
+          alterar_menu_cambiar();
+          </script>
+          <?php
           include 'cambiar_claves.php';
         }elseif ($_GET['tipo']=='borrar') {
           $tipo = "borrar";
+          ?>
+          <script>
+          alterar_menu_borrar();
+          </script>
+          <?php
           include 'borrar_claves.php';
         }
 ?>

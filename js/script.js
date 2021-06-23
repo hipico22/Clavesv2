@@ -69,4 +69,17 @@ $(document).ready(function () {
 
         })
     });
+    //tentativa de por o menu a dar
+    function alterar_menu_anadir(){
+      $('a').removeClass('pag-atual');
+      $('.Anadir').addClass('pag-atual');
+    }
+    function alterar_menu_cambiar(){
+      $('a').removeClass('pag-atual');
+      $('.Cambiar').addClass('pag-atual');
+    }
+    function alterar_menu_borrar(){
+      $('a').removeClass('pag-atual');
+      $('.Borrar').addClass('pag-atual');
+    }
 });
