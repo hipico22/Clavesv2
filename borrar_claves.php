@@ -10,7 +10,7 @@ $_SESSION['borrar'] = 1;
 
 ?>
 
-<div class="container-fluid" onload="active1()">
+<div class="container-fluid" onload="active1()" id="resultado">
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
@@ -66,7 +66,7 @@ $_SESSION['borrar'] = 1;
           <td>'.$linea["descripcion"].'</td>
           <td>'.$linea["cantidad"].'</td>
           <td>'.$linea["estado"].'</td>
-          <td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
+          <td><a class="btn_borrar" onclick="confirm()" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>';
           $valor = 1;
         }
@@ -77,15 +77,21 @@ $_SESSION['borrar'] = 1;
       </form>';
     };
     ?>
+    <script>
+    function confirm() {
+      confirm("¿Estás seguro de que quieres eliminar el registro?");
+    }
+  </script>
+
     <div id="paginacion1">
       <!--Comenzamos con la paginaciÃ³n. Creamos el botÃ³n de ir hacia detrÃ¡s.-->
       <ul class="pagination d-flex justify-content-center">
         <!--Si el nÃºmero de pÃ¡gina es 1 o menos, no podremos ir hacia detrÃ¡s.-->
-        <li class="page-item <?PHP if ($_GET['pagina'] <= 1) {
+        <li class="page-item borr <?PHP if ($_GET['pagina'] <= 1) {
           echo "disabled";
         } ?>">
         <!--Si clickeamos en el botÃ³n de la flechita, quitarÃ¡ 1 a la pÃ¡gina -->
-        <a class="page-link" href="index.php?pagina=<?PHP echo $_GET['pagina'] - 1 ?>&tipo=borrar">&laquo;</a>
+        <a class="page-link borr" href="index.php?pagina=<?PHP echo $_GET['pagina'] - 1 ?>&tipo=borrar">&laquo;</a>
       </li>
 
       <?PHP
@@ -100,7 +106,7 @@ $_SESSION['borrar'] = 1;
         <?PHP if ($_GET['pagina'] == $i + 1) {
           echo "active";
         } ?>">
-        <a class="page-link" href="index.php?pagina=<?PHP echo $i + 1 ?>&tipo=borrar">
+        <a class="page-link borr" href="index.php?pagina=<?PHP echo $i + 1 ?>&tipo=borrar">
           <?PHP
           echo $i + 1;
           ?>
@@ -109,18 +115,12 @@ $_SESSION['borrar'] = 1;
       <?PHP
     };
     ?>
-    <li class="page-item <?PHP if ($_GET['pagina'] >= $paginas) {
+    <li class="page-item borr <?PHP if ($_GET['pagina'] >= $paginas) {
       echo "disabled";
     } ?>">
-    <a class="page-link" href="index.php?pagina=<?PHP echo $_GET['pagina'] + 1 ?>&tipo=borrar">&raquo;</a>
+    <a class="page-link borr" href="index.php?pagina=<?PHP echo $_GET['pagina'] + 1 ?>&tipo=borrar">&raquo;</a>
   </li>
   </ul>
   </div>
-</body>
-</div>
-</div>
-</div>
 
-</div>
-</div>
-</div>
+  </div>

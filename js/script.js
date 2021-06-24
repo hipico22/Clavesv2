@@ -2,10 +2,21 @@
 $(document).ready(function () {
     let edit = false;
     console.log('jquery is working!');
+
+    $("#mostrar").click(function () {
+        $.ajax({
+            url: 'mostrar_claves.php?pagina=1',
+            success: function (data) {
+                $('#resultado').html(data);
+                $('a').removeClass('pag-atual');
+                $('.Mostrar').addClass('pag-atual');
+            }
+        })
+    });
     //Este es el menú de arriba al pulsar borrar.
     $("#borrar").click(function () {
         $.ajax({
-            url: 'borrar_claves.php?pagina=1',
+            url: 'borrar_claves.php?pagina=1&tipo=borrar',
             success: function (data) {
                 $('#resultado').html(data);
                 $('a').removeClass('pag-atual');
@@ -17,7 +28,7 @@ $(document).ready(function () {
     //Cuando clickeamos en eliminar, elimina la columna.
     $("#cambiar").click(function () {
         $.ajax({
-            url: 'cambiar_claves.php?pagina=1',
+            url: 'cambiar_claves.php?pagina=1&tipo=cambiar',
             success: function (data) {
               $('#resultado').html(data);
               $('a').removeClass('pag-atual');
@@ -28,7 +39,7 @@ $(document).ready(function () {
     });
     $("#cambiar1").click(function () {
         $.ajax({
-            url: 'cambiar_claves.php?pagina=1',
+            url: 'cambiar_claves.php?pagina=1&tipo=cambiar',
             success: function (data) {
               $('#resultado').html(data);
               $('a').removeClass('pag-atual');
@@ -52,7 +63,7 @@ $(document).ready(function () {
    });
     $("#añadir").click(function () {
         $.ajax({
-            url: 'añadir_claves.php?pagina=1',
+            url: 'añadir_claves.php?pagina=1&tipo=anadir',
             type: 'POST',
             success: function (data) {
               $('#resultado').html(data);
@@ -69,17 +80,20 @@ $(document).ready(function () {
 
         })
     });
+
     //tentativa de por o menu a dar
-    function alterar_menu_anadir(){
+    $("#ana").click(function(){
       $('a').removeClass('pag-atual');
-      $('.Anadir').addClass('pag-atual');
-    }
-    function alterar_menu_cambiar(){
+      $(".Anadir").addClass("pag-atual");
+    });
+
+    $("#camb").click(function(){
       $('a').removeClass('pag-atual');
-      $('.Cambiar').addClass('pag-atual');
-    }
-    function alterar_menu_borrar(){
+      $(".Cambiar").addClass("pag-atual");
+    });
+
+    $("#borr").click(function(){
       $('a').removeClass('pag-atual');
-      $('.Borrar').addClass('pag-atual');
-    }
+      $(".Borrar").addClass("pag-atual");
+    });
 });

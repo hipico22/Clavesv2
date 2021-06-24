@@ -47,14 +47,14 @@
 
       <?php
 
-      $consulta1 = "SELECT tipo FROM tipo";
+      $consulta1 = "SELECT * FROM tipo";
 
       $resultado1 = $conexion->query($consulta1);
 
-      while ($linea1 = $resultado1->fetch_assoc()) {
+    /*  while ($linea1 = $resultado1->fetch_assoc()) {
         $tipos[] = $linea1['tipo'];
-      }
-      //print_r($tipos);
+      }*/
+
 
       $contador = mysqli_num_rows($resultado1);
 
@@ -72,12 +72,25 @@
           <th scope="row">'.$linea['num_inc'].'</th>
           <td><input type="text" name="nombre" value="'.$linea['nombre'].'"></td>';
           echo '<td><select name="tipo">';
-            $saltar = $linea['tipo']-1;
+
+          for($i=0;$i<$contador;$i++){
+
+            $linea1 = $resultado1->fetch_assoc();
+            ?>
+            <option
+            <?php if($linea['tipo'] == $linea1['id_tipo']){
+              echo "selected";
+            }?>
+            value="<?php echo $linea1['id_tipo']; ?>"><?php echo $linea1['tipo']; ?></option>
+            <?php
+          }
+
+          /*  $saltar = $linea['tipo']-1;
             $saltar2 = $saltar;
-            print($saltar);
+
             for ($i=0;$i<$contador;$i++) {
               if (!empty($saltar) OR $saltar == 0) {
-                echo $saltar;
+                $numero = 0;
                 echo '<option value="'.$numero.'">'.$tipos[$saltar].'</option>';
                 $saltar = "";
               } elseif ($i == $saltar2 && empty($saltar)) {
@@ -88,6 +101,7 @@
 
                 echo '<option value="'.$numero.'">'.$tipos[$i].'</option>';
             }
+            */
             echo '</select></td>';
             echo'
           <td><input type="text" name="clave" value="'.$linea['clave'].'"></td>

@@ -7,8 +7,10 @@ $_SESSION['anadir'] = 0;
 $_SESSION['cambiar'] = 1;
 $_SESSION['borrar'] = 0;
 ?>
+
 <!-- Page content-->
 <div class="container-fluid" id="resultado">
+
   <h1 class="mt-4">Claves</h1>
   <?PHP
   include "conexion.php";
@@ -73,15 +75,16 @@ $_SESSION['borrar'] = 0;
       </table>';
     };
     ?>
+
     <div id="paginacion1">
       <!--Comenzamos con la paginaciÃ³n. Creamos el botÃ³n de ir hacia detrÃ¡s.-->
       <ul class="pagination d-flex justify-content-center">
         <!--Si el nÃºmero de pÃ¡gina es 1 o menos, no podremos ir hacia detrÃ¡s.-->
-        <li class="page-item <?PHP if ($_GET['pagina'] <= 1) {
+        <li class="page-item camb <?PHP if ($_GET['pagina'] <= 1) {
           echo "disabled";
         } ?>">
         <!--Si clickeamos en el botÃ³n de la flechita, quitarÃ¡ 1 a la pÃ¡gina -->
-        <a class="page-link" href="index.php?pagina=<?PHP echo $_GET['pagina'] - 1 ?>&tipo=cambiar">&laquo;</a>
+        <a class="page-link camb" href="index.php?pagina=<?PHP echo $_GET['pagina'] - 1 ?>&tipo=cambiar">&laquo;</a>
       </li>
 
       <?PHP
@@ -92,11 +95,11 @@ $_SESSION['borrar'] = 0;
       $paginas = ceil($total_paginas);
       //Creamos un bucle que sacarÃ¡ el nÃºmero de pÃ¡ginas que queremos.
       for ($i = 0; $i < $paginas; $i++) { ?>
-        <li class="page-item
+        <li class="page-item camb
         <?PHP if ($_GET['pagina'] == $i + 1) {
           echo "active";
         } ?>">
-        <a class="page-link" href="index.php?pagina=<?PHP echo $i + 1 ?>&tipo=cambiar">
+        <a class="page-link camb" href="index.php?pagina=<?PHP echo $i + 1 ?>&tipo=cambiar">
           <?PHP
           echo $i + 1;
           ?>
@@ -105,19 +108,11 @@ $_SESSION['borrar'] = 0;
       <?PHP
     };
     ?>
-    <li class="page-item <?PHP if ($_GET['pagina'] >= $paginas) {
+    <li class="page-item camb <?PHP if ($_GET['pagina'] >= $paginas) {
       echo "disabled";
     } ?>">
-    <a class="page-link" href="index.php?pagina=<?PHP echo $_GET['pagina'] + 1 ?>&tipo=cambiar">&raquo;</a>
+    <a class="page-link camb" href="index.php?pagina=<?PHP echo $_GET['pagina'] + 1 ?>&tipo=cambiar">&raquo;</a>
     </li>
     </ul>
     </div>
-
-</body>
-</div>
-</div>
-</div>
-
-</div>
-</div>
 </div>
