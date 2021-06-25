@@ -29,7 +29,7 @@ $_SESSION['borrar'] = 1;
           <th scope="col">Descripción</th>
           <th scope="col">Cantidad</th>
           <th scope="col">Estado</th>
-          <th scope="col">Opciones</th>
+          <th scope="col">Opción</th>
         </tr>
       </thead>
 
