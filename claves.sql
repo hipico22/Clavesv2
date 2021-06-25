@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24-Jun-2021 às 12:37
+-- Tempo de geração: 25-Jun-2021 às 10:24
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 8.0.0
 
@@ -34,7 +34,7 @@ CREATE TABLE `claves` (
   `clave` varchar(500) NOT NULL,
   `descripcion` varchar(1000) NOT NULL,
   `cantidad` int(5) NOT NULL,
-  `estado` varchar(15) NOT NULL
+  `estado` int(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -42,29 +42,46 @@ CREATE TABLE `claves` (
 --
 
 INSERT INTO `claves` (`num_inc`, `nombre`, `tipo`, `clave`, `descripcion`, `cantidad`, `estado`) VALUES
-(13, 'Gonçalo Silva', 2, 'dasdas', 'dsadasd', 123, 'No usada'),
-(21, 'Alex', 1, 'asdasdasd', 'Frango com arroz', 5, 'No usada'),
-(23, 'absol', 3, 'asdasdasd-dasdasdasd-asdasdasdas-dasdasdasd', 'Café da manhã', 21, 'Usada'),
-(25, 'dasdasd', 3, 'dasdasda', 'dasdasddas', 23, 'Usada'),
-(27, 'Coldplay', 1, 'dasdasd-asdasd-asdasd-asdasd', 'sdadasdasdasd', 111, 'No usada'),
-(28, 'Rafael', 3, 'asdasd-dasd-asdasd-adsasd', 'asdasd', 3, 'No usada'),
-(29, 'Clemenmtina', 4, '123qwdqwdqdqw', 'dasdqwdqWDQF', 312, 'Usada'),
-(34, 'Sara ', 1, 'asdasdasdasdasdasd', 'asdasdasdasd', 123, 'No usada'),
-(35, 'Fenix', 2, 'testjanskdajsndkajnsdka', 'dasdasdasdasd', 11, 'No usada'),
-(36, 'Alberta', 2, '1312321-312312-13231-312321', 'Imagina poder almoçar', 31, 'Usada'),
-(37, 'Galo', 3, 'c1d1rre1-e1wwd12-d1wd11r-1dsdaws', 'you can fly away with me tonight', 21, 'Usada'),
-(40, 'asdasd', 3, 'asdasdasd', 'asdasdasd', 21, 'Usada'),
-(42, 'dasdas', 3, 'dasdasd', 'adsasd', 123, 'Usada'),
-(45, 'João', 1, 'dasdasdasd-asd1sadasd-dasdasd-adsasdasd', 'dasdasd', 21, 'Usada'),
-(46, 'Iara Silva', 3, 'asdasdasd-dasdasdas-dasdasdas-dasdas', 'dasdsadfsadf', 31, 'No usada'),
-(47, 'Marcelo Rocha', 3, 'asdasd-dasdasd-12edasd-adsdasd', 'dasdasdsad', 41, 'Usada'),
-(48, 'Matias', 2, 'dasdasda-sdasdasd-asd-dasdasd', 'cenas do bem', 2, 'No usada'),
-(49, 'Tomás Pinho', 1, 'Cenas do mal', 'ufa', 211, 'No usada'),
-(50, 'Rúben Correia', 4, 'dasdasd', 'dasdasd', 2113, 'Usada'),
-(51, 'Ivan Xará', 2, 'dasdasd-dasdasd-adsdasd-dasd', 'dasdasd', 14, 'No usada'),
-(52, 'Leonor Leite', 3, 'dasdsa-dasdsda-dasdsa-dasda', 'dasd12dawd', 24, 'Usada'),
-(53, 'Dário', 4, 'dasdas-dasdas-dasd-dasda', 'dasdasdasd', 12, 'Usada'),
-(54, 'Vitor', 4, 'dasdasdd-asdasdas-dadas-dasd', 'Gosto de frango', 2, 'No usada');
+(13, 'Gonçalo de Portugal', 2, '413241-412341-42314-1234', 'O estagiário de Portugal', 4, 1),
+(21, 'Alfredo', 2, 'dasdasd-dasdasd-adssadas-dasdas', 'Frango com arroz', 1, 1),
+(27, 'Coldplay', 2, 'dasdasd-asdasd-asdasd-asdasd', 'sdadasdasdasd', 111, 2),
+(28, 'Rafael', 3, 'asdasd-dasd-asdasd-adsasd', 'asdasd', 3, 2),
+(29, 'Clemenmtina', 4, '123qwdqwdqdqw', 'dasdqwdqWDQF', 312, 1),
+(34, 'Sara ', 4, 'asdasdasdasdasdasd', 'asdasdasdasd', 123, 2),
+(35, 'Fenix', 2, 'testjanskdajsndkajnsdka', 'dasdasdasdasd', 11, 1),
+(37, 'Galo', 3, 'c1d1rre1-e1wwd12-d1wd11r-1dsdaws', 'you can fly away with me tonight', 21, 2),
+(40, 'asdasd', 3, 'asdasdasd', 'asdasdasd', 21, 1),
+(45, 'João', 2, 'dasdasdasd-asd1sadasd-dasdasd-adsasdasd', 'dasdasd', 21, 1),
+(46, 'Iara Silva', 3, 'asdasdasd-dasdasdas-dasdasdas-dasdas', 'dasdsadfsadf', 31, 1),
+(47, 'Marcelo Rocha', 3, 'asdasd-dasdasd-12edasd-adsdasd', 'dasdasdsad', 41, 2),
+(48, 'Matias', 2, 'dasdasda-sdasdasd-asd-dasdasd', 'cenas do bem', 2, 1),
+(49, 'Tomás Pinho', 1, 'Cenas do mal', 'ufa', 211, 2),
+(50, 'Rúben Correia', 4, 'dasdasd', 'dasdasd', 2113, 1),
+(51, 'Ivan Xará', 1, 'dasdasd-dasdasd-adsdasd-dasd', 'dasdasd', 14, 2),
+(52, 'Leonor Leite', 3, 'dasdsa-dasdsda-dasdsa-dasda', 'dasd12dawd', 24, 1),
+(53, 'Dário', 4, 'dasdas-dasdas-dasd-dasda', 'dasdasdasd', 12, 2),
+(54, 'Vitor', 4, 'dasdasdd-asdasdas-dadas-dasd', 'Gosto de frango', 2, 1),
+(55, 'Marcelo', 4, '12312312', '312313', 5, 2),
+(57, 'teste', 4, 'das', 'dasd', 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `estado`
+--
+
+CREATE TABLE `estado` (
+  `id_estado` int(11) NOT NULL,
+  `estado` varchar(80) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `estado`
+--
+
+INSERT INTO `estado` (`id_estado`, `estado`) VALUES
+(1, 'No usada'),
+(2, 'Usada');
 
 -- --------------------------------------------------------
 
@@ -96,7 +113,14 @@ INSERT INTO `tipo` (`id_tipo`, `tipo`) VALUES
 --
 ALTER TABLE `claves`
   ADD PRIMARY KEY (`num_inc`),
-  ADD KEY `tipo` (`tipo`);
+  ADD KEY `tipo` (`tipo`),
+  ADD KEY `estado` (`estado`);
+
+--
+-- Índices para tabela `estado`
+--
+ALTER TABLE `estado`
+  ADD PRIMARY KEY (`id_estado`);
 
 --
 -- Índices para tabela `tipo`
@@ -112,7 +136,13 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de tabela `claves`
 --
 ALTER TABLE `claves`
-  MODIFY `num_inc` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `num_inc` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+
+--
+-- AUTO_INCREMENT de tabela `estado`
+--
+ALTER TABLE `estado`
+  MODIFY `id_estado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tipo`
