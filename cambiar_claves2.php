@@ -102,15 +102,34 @@
                 echo '<option value="'.$numero.'">'.$tipos[$i].'</option>';
             }
             */
+            $estados = "SELECT * FROM estado";
+
+            $resultados = $conexion->query($estados);
+
+            $contador = mysqli_num_rows($resultados);
+
+
             echo '</select></td>';
             echo'
           <td><input type="text" name="clave" value="'.$linea['clave'].'"></td>
           <td><input type="text" name="descripcion" value="'.$linea['descripcion'].'"></td>
           <td><input type="text" name="cantidad" value="'.$linea['cantidad'].'"></td>
           <td>
-          <select name="estado" value="'.$linea['estado'].'">
-          <option>No usada</option><option>Usada</option>
-          </select>
+          <select name="estado">';
+          for($i=0;$i<$contador;$i++)
+          {
+            $linea2 = $resultados->fetch_assoc();
+            ?>
+            <option
+            <?php if($linea['estado'] == $linea2['id_estado']){
+              echo "selected";
+            }?>
+            value="<?php echo $linea2['id_estado']; ?>"><?php echo $linea2['estado']; ?></option>
+            <?php
+          }
+
+
+        echo '</select>
           </td>
           <td><button name="BT" id="btn_send" type="submit" value="Cambiar">Cambiar</td>
           </tr>

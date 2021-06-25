@@ -39,7 +39,18 @@ $_SESSION['borrar'] = 1;
 
       while ($linea = $resultado->fetch_assoc()) {
         //echo("$linea[num_inc], $linea[nombre]");
+?>
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          document.querySelector('.btn_borrar').addEventListener('click', clicar);
+        });
 
+        function clicar()
+        {
+          confirm("¿Estás seguro de que quieres eliminar el registro?");
+        }
+        </script>
+<?php
         if($valor == 1)
         {
           echo '<form method="post">
@@ -50,9 +61,13 @@ $_SESSION['borrar'] = 1;
           <td>'.$linea['tipo'].'</td>
           <td>'.$linea['clave'].'</td>
           <td>'.$linea['descripcion'].'</td>
-          <td>'.$linea['cantidad'].'</td>
-          <td>'.$linea['estado'].'</td>
-          <td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
+          <td>'.$linea['cantidad'].'</td>';
+          if($linea['estado']==1){
+          echo '<td>'."No usada".'</td>';
+          }else{
+          echo '<td>'."Usada".'</td>';
+          }
+          echo'<td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>
           ';
           $valor = 2;
@@ -64,9 +79,13 @@ $_SESSION['borrar'] = 1;
           <td>'.$linea["tipo"].'</td>
           <td>'.$linea["clave"].'</td>
           <td>'.$linea["descripcion"].'</td>
-          <td>'.$linea["cantidad"].'</td>
-          <td>'.$linea["estado"].'</td>
-          <td><a class="btn_borrar" onclick="confirm()" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
+          <td>'.$linea["cantidad"].'</td>';
+          if($linea['estado']==1){
+          echo '<td>'."No usada".'</td>';
+          }else{
+          echo '<td>'."Usada".'</td>';
+          }
+          echo'<td><a class="btn_borrar" href="borrar_claves2.php?id='.$linea['num_inc'].'" id="eliminar">Borrar</a></td>
           </tr>';
           $valor = 1;
         }
@@ -77,11 +96,6 @@ $_SESSION['borrar'] = 1;
       </form>';
     };
     ?>
-    <script>
-    function confirm() {
-      confirm("¿Estás seguro de que quieres eliminar el registro?");
-    }
-  </script>
 
     <div id="paginacion1">
       <!--Comenzamos con la paginaciÃ³n. Creamos el botÃ³n de ir hacia detrÃ¡s.-->

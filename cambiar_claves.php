@@ -37,6 +37,9 @@ $_SESSION['borrar'] = 0;
 
       $valor = 1;
 
+
+
+
       while ($linea = $resultado->fetch_assoc()) {
         //echo("$linea[num_inc], $linea[nombre]");
 
@@ -49,9 +52,13 @@ $_SESSION['borrar'] = 0;
           <td>'.$linea['tipo'].'</td>
           <td>'.$linea['clave'].'</td>
           <td>'.$linea['descripcion'].'</td>
-          <td>'.$linea['cantidad'].'</td>
-          <td>'.$linea['estado'].'</td>
-          <td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
+          <td>'.$linea['cantidad'].'</td>';
+          if($linea['estado']==1){
+          echo '<td>'."No usada".'</td>';
+          }else{
+          echo '<td>'."Usada".'</td>';
+          }
+          echo'<td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
           </tr>
           ';
           $valor = 2;
@@ -63,9 +70,13 @@ $_SESSION['borrar'] = 0;
           <td>'.$linea["tipo"].'</td>
           <td>'.$linea["clave"].'</td>
           <td>'.$linea["descripcion"].'</td>
-          <td>'.$linea["cantidad"].'</td>
-          <td>'.$linea["estado"].'</td>
-          <td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
+          <td>'.$linea["cantidad"].'</td>';
+          if($linea['estado']==1){
+          echo '<td>'."No usada".'</td>';
+          }else{
+          echo '<td>'."Usada".'</td>';
+          }
+          echo'<td><a class="btn_cambiar" href="cambiar_claves2.php?id='.$linea['num_inc'].'">Cambiar</a></td>
           </tr>';
           $valor = 1;
         }

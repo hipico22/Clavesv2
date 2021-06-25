@@ -51,9 +51,13 @@ $_SESSION['borrar'] = 0;
             <td>'.$linea['tipo'].'</td>
             <td>'.$linea['clave'].'</td>
             <td>'.$linea['descripcion'].'</td>
-            <td>'.$linea['cantidad'].'</td>
-            <td>'.$linea['estado'].'</td>
-            </tr>
+            <td>'.$linea['cantidad'].'</td>';
+            if($linea['estado']==1){
+            echo '<td>'."No usada".'</td>';
+            }else{
+            echo '<td>'."Usada".'</td>';
+            }
+            echo'</tr>
             ';
             $valor = 2;
           }else {
@@ -64,9 +68,13 @@ $_SESSION['borrar'] = 0;
             <td>'.$linea["tipo"].'</td>
             <td>'.$linea["clave"].'</td>
             <td>'.$linea["descripcion"].'</td>
-            <td>'.$linea["cantidad"].'</td>
-            <td>'.$linea["estado"].'</td>
-            </tr>';
+            <td>'.$linea["cantidad"].'</td>';
+            if($linea['estado']==1){
+            echo '<td>'."No usada".'</td>';
+            }else{
+            echo '<td>'."Usada".'</td>';
+            }
+            echo'</tr>';
             $valor = 1;
           }
 
