@@ -21,7 +21,7 @@ $_SESSION['borrar'] = 0;
   if ($resultado = $conexion->query($consulta)) {
     ?>
     <form method="POST" action="añadir_claves2.php">
-
+<div style="overflow-x:auto;">
       <table style="border: solid black 2px" class="table table-hover">
         <thead>
           <tr>
@@ -91,6 +91,7 @@ $_SESSION['borrar'] = 0;
         </tr>
         </tbody>
         </table>
+        </div>
         <button type="submit" id="btn_send">Añadir</button>
         </form>';
       };
